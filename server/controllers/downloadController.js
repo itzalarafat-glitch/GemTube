@@ -1,4 +1,4 @@
-const { instagramGetUrl } = require('instagram-url-direct');
+const { ndown } = require("nayan-media-downloader"); // 👈 Swapped the tool!
 const axios = require('axios');
 
 // 1. MAIN DOWNLOAD LOGIC
@@ -8,13 +8,18 @@ exports.getMedia = async (req, res) => {
 
     try {
         console.log(`Step 1: Fetching data for ${userUrl}`);
-        const result = await instagramGetUrl(userUrl);
         
-        if (result && result.url_list && result.url_list.length > 0) {
-            console.log("Step 2: Media found!");
-            res.json({ success: true, mediaUrls: result.url_list });
+        // Use the new scraper
+        const result = await ndown(userUrl);
+        console.log("Scraper Result:", result);
+        
+        // Nayan returns data slightly differently, so we adapt it here
+        if (result && result.status && result.data && result.data.length > 0) {
+            // We loop through to grab just the raw URLs
+            const urls = result.data.map(item => item.url);
+            res.json({ success: true, mediaUrls: urls });
         } else {
-            res.status(500).json({ success: false, message: "No media found on this page." });
+            res.status(500).json({ success: false, message: "No media found. Make sure the account is public." });
         }
     } catch (error) {
         console.error("Download Error:", error.message);
@@ -22,7 +27,7 @@ exports.getMedia = async (req, res) => {
     }
 };
 
-// 2. IMAGE PROXY LOGIC
+// 2. IMAGE PROXY LOGIC (Keep this exactly the same so previews still work!)
 exports.proxyMedia = async (req, res) => {
     try {
         const imageUrl = req.query.url;
