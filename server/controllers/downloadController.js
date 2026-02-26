@@ -12,8 +12,8 @@ exports.getMedia = async (req, res) => {
             method: 'GET',
             url: 'https://instagram-downloader-scraper-reels-igtv-posts-stories.p.rapidapi.com/scraper',
             params: { url: userUrl },
-            headers: {
-                'x-rapidapi-key': 'ffe0007c21mshed6191a544b3b4fp180701jsn01b4cb97367f',
+          headers: {
+                'x-rapidapi-key': process.env.RAPIDAPI_KEY, // 👈 THE VAULT KEY
                 'x-rapidapi-host': 'instagram-downloader-scraper-reels-igtv-posts-stories.p.rapidapi.com'
             }
         };
@@ -71,3 +71,4 @@ exports.proxyMedia = async (req, res) => {
         res.status(500).send("Proxy Error");
     }
 };
+
