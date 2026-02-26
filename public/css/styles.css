@@ -1,0 +1,438 @@
+/* RESET & BASIC SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body { background-color: #FFFFFF; color: #202124; }
+
+/* TOP WHITE HEADER (Logo & FAQ) */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #8a2be2; /* Purple color for the logo */
+}
+
+.header-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #202124;
+    font-weight: 500;
+}
+
+/* GRADIENT BANNER */
+.gradient-banner {
+    /* This creates the Purple to Pink gradient from your screenshot */
+    background: linear-gradient(to right, #8a2be2, #d12cb8, #f02b70);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center; /* Centers the menu */
+}
+
+/* FLOATING MENU (Glass effect) */
+.floating-nav {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    border-radius: 8px; /* Slightly rounded edges */
+    padding: 5px;
+    flex-wrap: wrap; /* Allows tabs to stack on small mobile screens */
+    justify-content: center;
+}
+
+.floating-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 2px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+/* When a tab is clicked/active, or when hovered with a mouse */
+.floating-nav a.active, 
+.floating-nav a:hover {
+    background: rgba(255, 255, 255, 0.25); /* Slightly less transparent white */
+}
+
+/* HERO SECTION (Search Bar area) */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 { font-size: 36px; margin-bottom: 10px; color: #202124;}
+p { color: #5F6368; margin-bottom: 30px; }
+
+/* THE INPUT BAR AREA */
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Tells it to stretch out */
+    max-width: 800px; /* 👈 Increased from 650px to make it much lengthier! */
+    margin: 0 auto;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    padding: 8px; /* Gives the buttons nice breathing room */
+    
+    /* Added a very soft shadow to make it pop off the background */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+.input-box input {
+    flex: 1; /* Tells the typing area to push the buttons to the far right */
+    width: 100%; /* Forces the typing area to stretch */
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #202124;
+}
+/* THE NEW PASTE BUTTON */
+.paste-btn {
+    background-color: #f1f3f4; /* Light gray */
+    color: #202124;
+    border: none;
+    padding: 10px 18px;
+    margin-right: 8px; /* Space between Paste and Download */
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.paste-btn:hover {
+    background-color: #e8eaed; /* Slightly darker gray when hovering */
+}
+
+/* THE DOWNLOAD BUTTON */
+.download-btn {
+    background: linear-gradient(to right, #8a2be2, #d12cb8);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px; /* Rounded corners inside the box */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out; 
+}
+
+.download-btn:hover {
+    background: linear-gradient(to right, #ff3333, #cc0000); 
+}
+
+/* --- NEW SECTIONS: DESCRIPTION, STEPS, AND FOOTER --- */
+
+/* 1. Description Section (Light Gray Background) */
+.description-section {
+    background-color: #f8f9fa; 
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.description-section h2 {
+    font-size: 28px;
+    color: #202124;
+    margin-bottom: 20px;
+}
+
+.description-section p {
+    font-size: 16px;
+    color: #202124;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. How to Download Section (White Background) */
+.steps-section {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.steps-section h2 {
+    font-size: 28px;
+    color: #1A73E8;
+    margin-bottom: 10px;
+}
+
+.steps-subtitle {
+    color: #5F6368;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* The Grid for the Cards */
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns for desktop */
+    gap: 30px;
+    text-align: center;
+}
+
+/* 2. How to Download Section (White Background) */
+.steps-section {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.steps-section h2 {
+    font-size: 28px;
+    color: #1A73E8;
+    margin-bottom: 10px;
+}
+
+.steps-subtitle {
+    color: #5F6368;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* The Grid for the Cards */
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns for desktop */
+    gap: 30px;
+    text-align: center;
+}
+
+/* The Individual Cards */
+.step-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* 👇 THIS IS THE MAGIC FIX 👇 */
+    margin: 0 auto; /* Centers the card when stacked */
+    width: 100%;
+    max-width: 350px; /* Prevents it from ever getting huge on tablets! */
+}
+
+.step-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.step-content {
+    padding: 25px 20px;
+}
+
+.step-title {
+    color: #c13584; 
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.step-text {
+    color: #5F6368;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* RESPONSIVENESS: Table & Mobile Adjustments */
+
+/* For smaller laptops / horizontal tablets */
+@media (max-width: 900px) {
+    .steps-grid {
+        gap: 15px; /* Shrink the space between so they still fit in 3 columns */
+    }
+}
+
+/* For vertical tablets and phones */
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr; /* Stacks to 1 single column */
+    }
+    .step-card {
+        margin-bottom: 20px; /* Adds space between the stacked cards */
+    }
+}
+
+/* The Individual Cards */
+.step-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    
+    /* Initial state: small shadow, sitting flat */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transform: translateY(0); /* Sits flat initially */
+
+    /* 👇 THIS IS VITAL FOR SMOOTHNESS 👇 */
+    /* This tells the browser to animate changes over 0.3 seconds */
+    transition: all 0.3s ease;
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* 👇 NEW CODE: WHAT HAPPENS WHEN MOUSE HOVERS 👇 */
+.step-card:hover {
+    /* Lifts the card up by 10 pixels */
+    transform: translateY(-10px);
+    
+    /* Makes the shadow bigger, blurrier, and darker to create depth */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* New rules for the images */
+.step-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Adding padding around the text inside the card */
+.step-content {
+    padding: 25px 20px;
+}
+
+/* The Pink Title Text */
+.step-title {
+    color: #c13584; /* Instagram pink/purple */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.step-text {
+    color: #5F6368;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Mobile Responsiveness: Make cards stack in 1 column on phones */
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* The Individual Cards */
+.step-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    font-size: 16px;
+    color: #202124;
+}
+
+/* 3. The Dark Footer */
+.site-footer {
+    background-color: #202124;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness: Make cards stack on small screens */
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr; /* Changes to 1 column on phones */
+    }
+}
+
+/* --- LOADING AND RESULT STATES --- */
+
+.loading-hidden {
+    display: none;
+}
+
+.loading-visible {
+    display: block;
+    margin-top: 20px;
+    color: #1A73E8;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+#result-container {
+    margin-top: 25px;
+}
+
+/* --- THE NEW VARIABLE GRID (16:9 / 9:16) --- */
+.result-grid {
+    display: grid;
+    /* This makes sure cards don't stretch to match their neighbors' height */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto;
+    align-items: start; /* Allows vertical reels and horizontal photos in the same row */
+}
+
+.media-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Let the card grow vertically based on video height */
+}
+
+/* The actual video and image players */
+.preview-video, .preview-image {
+    width: 100%;
+    height: auto; /* CRITICAL: This allows the 16:9 or 9:16 shape to stay natural */
+    max-height: 75vh; /* Prevents tall vertical videos from going off-screen */
+    border-radius: 8px;
+    background-color: #000; 
+    object-fit: contain; /* Ensures the whole video/photo is visible without cropping */
+    margin-bottom: 12px;
+}
+
+/* The blue download button inside the card */
+.grid-download-btn, .card-download-btn {
+    display: block;
+    text-align: center;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.grid-download-btn:hover, .card-download-btn:hover {
+    opacity: 0.85;
+}
+
+.error-text {
+    color: #d93025;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
